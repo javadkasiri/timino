@@ -1,12 +1,6 @@
 <template>
   <div :class="['message-card', side]">
-    <div class="avatar-circle">
-      <span class="material-symbols-outlined avatar-icon">
-        {{ iconName }}
-      </span>
-    </div>
-
-    <div :class="['card-content', side]">
+     <div :class="['card-content', side]">
       <div class="sender-time">
         <span class="sender">{{ sender }}</span>
         <span class="time">{{ time }}</span>
@@ -46,21 +40,7 @@ export default {
   justify-content: flex-start;
   text-align: right;
 }
-.avatar-circle {
-  background-color: #e5e7eb;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 8px;
-}
 
-.avatar-icon {
-  font-size: 22px;
-  color: #333;
-}
 
 .card-content {
   max-width: 70%;
