@@ -4,9 +4,6 @@
     :class="{ active: isActive }"
     @click="selectItem"
   >
-    <div class="avatar">
-      <span class="material-symbols-outlined">person</span>
-    </div>
     <div class="content">
       <div class="top-row">
         <span class="sender">{{ sender }}</span>
@@ -54,19 +51,6 @@ export default {
 
 .history-list-item.active {
   background-color: #e3f2fd;
-}
-
-.avatar {
-  width: 40px;
-  height: 40px;
-  background-color: #ddd;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 24px;
-  margin-right: 12px;
-  flex-shrink: 0;
 }
 
 .content {
