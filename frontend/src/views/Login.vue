@@ -2,7 +2,7 @@
   <div class="login-wrapper">
     <div class="image-side">
       <router-link to="/" class="logo-area">
-        <img src="@/assets/logo.png" alt="Logo" />
+        <img src="@/assets/logo-02.png" alt="Logo" />
         <span class="logo-text">CNP ONE</span>
       </router-link>
 
@@ -156,13 +156,13 @@ export default {
 .image-side {
   width: 40%;
   height: 100%;
-  background-color: #2d53da;
+  background-color: #337efe;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 30px;
-  color: white;
+  color: #ffffff;
   text-align: center;
   position: relative;
 }
@@ -199,7 +199,7 @@ export default {
 .logo-text {
   font-size: 24px;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   letter-spacing: 1px;
 }
 
@@ -230,9 +230,9 @@ export default {
 .btn-signup {
   display: inline-block;
   margin-top: 15px;
-  padding: 20px 75px; /* بزرگترش کردم */
-  color: white;
-  border: 1px solid white;
+  padding: 20px 75px;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 50px;
   font-weight: 300;
   font-size: 16px;
@@ -241,8 +241,8 @@ export default {
 }
 
 .btn-signup:hover {
-  background-color: white;
-  color: #2d53da;
+  background-color: #ffffff;
+  color: #337efe;
 }
 
 .login-container {
@@ -251,7 +251,7 @@ export default {
   background-color: #ffffff;
   display: flex;
   justify-content: center;
-  align-items: center; /* این خط مهمه برای وسط‌چین عمودی */
+  align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
 }
@@ -267,7 +267,7 @@ export default {
 h2 {
   text-align: left;
   font-size: 35px;
-  color: #2b3674;
+  color: #333;
 }
 
 .form-group {
@@ -279,7 +279,7 @@ label {
   display: block;
   margin-bottom: 5px;
   padding-bottom: 3px;
-  color: #2b3674;
+  color: #333;
   font-size: 14px;
   /*font-weight: bold;*/
 }
@@ -339,15 +339,15 @@ button,
 button {
   width: 100%;
   padding: 10px;
-  background-color: #2d53da;
+  background-color: #337efe;
   border: none;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #2544b3;
+  background-color: #3077ef;
 }
 
 .error-message {
@@ -384,7 +384,7 @@ button:hover {
   display: flex;
   background-color: #333;
   border: none;
-  color: white;
+  color: #ffffff;
   font-weight: bold;
   align-items: center;
   justify-content: center;

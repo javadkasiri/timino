@@ -17,6 +17,9 @@ export default {
   margin-top: 50px;
 }
 .home h1 {
-  color: #2d53da;
+  color: #202b3d;
+}
+.home p {
+  color: #202b3d;
 }
 </style>

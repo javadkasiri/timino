@@ -60,7 +60,7 @@ export default {
 }
 
 h3 {
-  color: #2d53da;
+  color: #337efe;
   text-align: center;
   margin-bottom: 20px;
 }
@@ -85,8 +85,8 @@ input {
 }
 
 button {
-  background-color: #2d53da;
-  color: white;
+  background-color: #337efe;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   font-weight: bold;

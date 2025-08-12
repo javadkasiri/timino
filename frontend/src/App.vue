@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <!-- فقط وقتی لاگین نیست navbar نمایش داده بشه -->
-    <AppNavbar v-if="!isLoggedIn" />
+    <AppNavbar v-if="!$route.matched.some(r => r.meta.hideNavbar)" />
     <router-view />
   </div>
 </template>
@@ -14,11 +13,6 @@ export default {
   name: "App",
   components: {
     AppNavbar,
-  },
-  computed: {
-    isLoggedIn() {
-      return auth.isLoggedIn;
-    },
   },
   async mounted() {
     const token = localStorage.getItem("token");

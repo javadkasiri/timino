@@ -93,7 +93,7 @@ export default {
         auth.isLoggedIn = false;
         this.$emit("logout");
         if (res.ok) {
-          this.$router.push("/login");
+          this.$router.push("/");
         } else {
           console.error("Logout failed");
         }
@@ -110,10 +110,9 @@ export default {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: white;
+  background-color: #ffffff;
   padding: 8px 10px;
   border-radius: 40px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   width: fit-content;
   max-width: 100%;
 }
@@ -125,7 +124,7 @@ export default {
   justify-content: center;
   height: 30px;
   border-radius: 30px;
-  background-color: #e7e9f0;
+  background-color: #dfe5f1;
   overflow: hidden;
   cursor: pointer;
   width: 30px;
@@ -165,21 +164,23 @@ export default {
 .search-icon {
   margin-left: 10px;
   font-size: 20px;
-  color: #2d53da;
+  color: #576d97;
   flex-shrink: 0;
   transition: color 0.3s ease;
 }
 
 .search-container.expanded .search-icon {
   color: #9ca3af;
+    margin-left: 0px;
+
 }
 
 .search-container:not(.expanded):hover .search-icon {
-  color: #1a3ea0;
+  color: #202b3d;
 }
 
 .search-container:not(.expanded):hover {
-  background-color: #e7e9f0;
+  background-color: #dfe5f1;
 }
 
 /* دکمه‌های عمومی */
@@ -198,16 +199,16 @@ export default {
 
 .icon-button .material-icons {
   font-size: 22px;
-  color: #2d53da;
+  color: #576d97;
   transition: color 0.2s ease;
 }
 
 .icon-button:hover {
-  background-color: #e7e9f0;
+  background-color: #dfe5f1;
 }
 
 .icon-button:hover .material-icons {
-  color: #2544b3;
+  color: #202b3d;
 }
 
 /* نوتیفیکیشن */
@@ -224,7 +225,7 @@ export default {
   height: 8px;
   background-color: red;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid #ffffff;
 }
 
 /* آیکون اکانت */
@@ -234,7 +235,7 @@ export default {
 
 /* دکمه خروج */
 .logout-button .material-icons {
-  color: #2d53da;
+  color: #576d97;
   transition: color 0.2s ease;
 }
 

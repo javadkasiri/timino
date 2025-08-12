@@ -76,7 +76,7 @@ export default {
 
 .card-content.left {
   background-color: #3b82f6;
-  color: white;
+  color: #ffffff;
 }
 
 .card-content.right {
