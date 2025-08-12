@@ -281,13 +281,13 @@ export default {
 .image-side {
   width: 40%;
   height: 100vh;
-  background-color: #2d53da;
+  background-color: #337efe;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 30px;
-  color: white;
+  color: #ffffff;
   text-align: center;
   position: relative;
 }
@@ -311,7 +311,7 @@ export default {
 .logo-text {
   font-size: 24px;
   font-weight: bold;
-  color: #0e3168;
+  color: #337efe;
   letter-spacing: 1px;
 }
 
@@ -341,8 +341,8 @@ export default {
   display: inline-block;
   margin-top: 15px;
   padding: 20px 75px;
-  color: white;
-  border: 1px solid white;
+  color: #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 50px;
   font-weight: 300;
   font-size: 16px;
@@ -351,8 +351,8 @@ export default {
 }
 
 .btn-login:hover {
-  background-color: white;
-  color: #2d53da;
+  background-color: #ffffff;
+  color: #337efe;
 }
 
 .form-side {
@@ -360,7 +360,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #ffffff;
   position: relative;
 }
 
@@ -375,7 +375,7 @@ export default {
 h2 {
   text-align: left;
   font-size: 35px;
-  color: #2b3674;
+  color: #333;
   font-weight: bold;
 }
 
@@ -387,7 +387,7 @@ h2 {
 label {
   display: block;
   margin-bottom: 5px;
-  color: #2b3674;
+  color: #333;
   font-size: 14px;
 }
 
@@ -464,13 +464,13 @@ button[type="submit"],
 }
 
 button[type="submit"] {
-  background-color: #2d53da;
-  color: white;
+  background-color: #337efe;
+  color: #ffffff;
   border: none;
 }
 
 button[type="submit"]:hover {
-  background-color: #2544b3;
+  background-color: #3077ef;
 }
 
 .divider-with-text {
@@ -503,7 +503,7 @@ button[type="submit"]:hover {
   background-color: #333;
   border: none;
   border-radius: 8px;
-  color: white;
+  color: #ffffff;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -526,7 +526,7 @@ button[type="submit"]:hover {
 }
 
 .success-message {
-  color: #2d53da;
+  color: #337efe;
   text-align: center;
   margin-top: 15px;
   font-weight: bold;
@@ -546,7 +546,7 @@ button[type="submit"]:hover {
 }
 
 .verify-popup {
-  background: white;
+  background: #ffffff;
   padding: 30px;
   border-radius: 12px;
   width: 90%;
@@ -558,7 +558,7 @@ button[type="submit"]:hover {
 .verify-popup h3 {
   margin-bottom: 10px;
   font-size: 20px;
-  color: #2d53da;
+  color: #337efe;
 }
 
 .verify-popup p {
@@ -568,8 +568,8 @@ button[type="submit"]:hover {
 }
 
 .verify-popup button {
-  background-color: #2d53da;
-  color: white;
+  background-color: #337efe;
+  color: #ffffff;
   padding: 10px 20px;
   border: none;
   border-radius: 8px;

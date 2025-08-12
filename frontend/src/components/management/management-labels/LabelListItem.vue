@@ -566,7 +566,7 @@ export default {
 }
 
 .description-expand-toggle .material-symbols-outlined {
-  color: white;
+  color: #ffffff;
   font-size: 22px;
   pointer-events: none;
 }
@@ -588,7 +588,7 @@ export default {
   border-radius: 12px;
   font-size: 12px;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
 }
 .status-badge.Pending {
   background: #ffc107;
@@ -771,7 +771,7 @@ export default {
 .btn-resolved {
   padding: 6px 12px;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -797,7 +797,7 @@ export default {
   z-index: 9999;
 }
 .image-modal-content {
-  background: white;
+  background: #ffffff;
   padding: 20px;
   border-radius: 10px;
   max-width: 80vw;
@@ -829,7 +829,7 @@ export default {
   top: -4px;
   right: -4px;
   background-color: #888; /* خاکستری */
-  color: white;
+  color: #ffffff;
   font-size: 10px;
   font-weight: bold;
   border-radius: 50%;
@@ -851,7 +851,7 @@ export default {
   top: -4px;
   right: -4px;
   background-color: #888; /* خاکستری */
-  color: white;
+  color: #ffffff;
   font-size: 10px;
   font-weight: bold;
   border-radius: 50%;

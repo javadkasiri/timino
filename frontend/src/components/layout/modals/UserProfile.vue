@@ -22,7 +22,7 @@ export default {
 }
 
 h3 {
-  color: #2d53da;
+  color: #337efe;
   margin-bottom: 20px;
 }
 

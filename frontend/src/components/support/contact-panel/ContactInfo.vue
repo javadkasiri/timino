@@ -276,7 +276,7 @@ export default {
   padding-left: 4px;
   cursor: pointer;
   color: #555;
-  background-color: white;
+  background-color: #ffffff;
   z-index: 2;
 }
 .attach-icon .material-symbols-outlined {
@@ -289,7 +289,7 @@ export default {
 }
 .submit-button {
   background-color: #2196f3;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 10px;
   border-radius: 8px;
@@ -324,7 +324,7 @@ export default {
   overflow: hidden;
 }
 .modal-content {
-  background: white;
+  background: #ffffff;
   border-radius: 12px;
   padding: 16px;
   width: 80vw;

@@ -9,7 +9,6 @@
 
       <!-- محتوا -->
       <div class="page-content">
-        <h2 v-if="$route.path === '/dashboard'">Welcome to your Dashboard</h2>
         <router-view />
       </div>
     </div>
@@ -38,7 +37,7 @@ export default {
 <style scoped>
 .dashboard-layout {
   display: flex;
-  background-color: #f4f7fe; /* یا رنگ دلخواه پس‌زمینه کلی */
+  background-color: #edf0f7; /* یا رنگ دلخواه پس‌زمینه کلی */
   min-height: 100vh;
 }
 
@@ -54,7 +53,7 @@ export default {
   display: flex;
   justify-content: flex-end;
   padding: 20px 30px;
-  background-color: #f4f7fe;
+  background-color: transparent;
   /*border-bottom: 1px solid #e0e0e0;*/
 }
 .user-topbar-wrapper > * {
@@ -68,9 +67,4 @@ export default {
   overflow-y: auto;
 }
 
-h2 {
-  text-align: center;
-  margin: 0;
-  color: #2c3e50;
-}
 </style>

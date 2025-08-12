@@ -1,6 +1,5 @@
 <template>
-  <nav class="navbar" v-if="!isAuthPage">
-    <!-- لوگو + متن -->
+  <nav class="navbar">
     <div class="left">
       <a @click.prevent="goToDashboard" class="logo" style="cursor: pointer">
         <img src="@/assets/logo-01.png" alt="Logo" class="logo-img" />
@@ -8,7 +7,6 @@
       </a>
     </div>
 
-    <!-- دکمه‌ها فقط وقتی مهمان هست -->
     <div class="guest-buttons" v-if="!isLoggedIn">
       <router-link to="/signup" class="btn-signup">Signup</router-link>
       <router-link to="/login" class="btn-login">Login</router-link>
@@ -24,11 +22,7 @@ export default {
   computed: {
     isLoggedIn() {
       return auth.isLoggedIn;
-    },
-    isAuthPage() {
-      const path = this.$route.path;
-      return path === "/login" || path === "/signup";
-    },
+    }
   },
   methods: {
     goToDashboard() {
@@ -47,7 +41,7 @@ export default {
   justify-content: space-between;
   height: 42px;
   align-items: center;
-  background-color: #f4f7fe;
+  background-color: #202b3d;
   padding: 10px 20px;
   position: sticky;
   top: 0;
@@ -78,14 +72,13 @@ export default {
 .logo-text {
   font-size: 25px;
   font-weight: bold;
-  color: #2b3674;
+  color: #ffffff;
   margin-right: 10px;
 }
 
 .btn-signup,
 .btn-login {
   padding: 8px 26px;
-  border: 1.5px solid #2d53da;
   border-radius: 20px;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -93,26 +86,21 @@ export default {
 }
 
 .btn-signup {
-  background-color: white;
-  color: #2d53da;
+  background-color: #ffffff;
+  color: #337efe;
 }
 .btn-signup:hover {
-  background-color: #2d53da;
-  color: white;
+  background-color: #337efe;
+  color: #ffffff;
 }
 
 .btn-login {
-  background-color: #2d53da;
-  color: white;
+  background-color: #337efe;
+  color: #ffffff;
 }
 .btn-login:hover {
-  background-color: #2544b3;
-  border-color: #2544b3;
+  background-color: #ffffff;
+  color: #337efe;
 }
 
-.guest-buttons {
-  display: flex;
-  align-items: center;
-  gap: 0px;
-}
 </style>

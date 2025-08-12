@@ -15,11 +15,14 @@ import DashboardIntegration from "../views/dashboard/DashboardIntegration.vue";
 //تعریف مسیرها
 const routes = [
   { path: "/", component: Home },
-  { path: "/signup", component: Signup },
-  { path: "/login", component: Login },
+
+  { path: "/signup", component: Signup, meta: { hideNavbar: true } },
+  { path: "/login", component: Login, meta: { hideNavbar: true } },
+
   {
     path: "/dashboard", //مسیر /dashboard فقط برای کاربران لاگین شده است
     component: Dashboard,
+    meta: { requiresAuth: true, hideNavbar: true },
     children: [
       { path: "", component: DashboardHome },
       { path: "management", component: DashboardManagement },
@@ -27,7 +30,6 @@ const routes = [
       { path: "workspace", component: DashboardWorkspace },
       { path: "integration", component: DashboardIntegration },
     ],
-    meta: { requiresAuth: true }, // برای فعال‌سازی گارد امنیتی استفاده می‌شود.
   },
 ];
 

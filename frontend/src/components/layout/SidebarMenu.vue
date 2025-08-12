@@ -3,7 +3,7 @@
     <!-- لوگو + فلش -->
     <div class="logo-area">
       <router-link to="/dashboard" class="logo-link">
-        <img src="@/assets/logo.png" alt="Logo" />
+        <img src="@/assets/logo-01.png" alt="Logo" />
         <span v-if="!isCollapsed" class="logo-text">CNP ONE</span>
       </router-link>
       <button class="toggle-btn" @click="toggleSidebar">
@@ -142,7 +142,7 @@ export default {
   width: 220px;
   transition: width 0.3s ease;
   height: 100vh;
-  background-color: #2d53da;
+  background-color: #202b3d;
   padding: 40px 5px 40px 15px;
   display: flex;
   flex-direction: column;
@@ -180,10 +180,9 @@ export default {
 }
 
 .logo-text {
-  padding-left: 11px;
   font-size: 20px;
   font-weight: bold;
-  color: white;
+  color: #ffffff;
   white-space: nowrap;
 }
 
@@ -197,7 +196,7 @@ export default {
   border-radius: 50%;
   background-color: transparent;
   border: none;
-  color: black; /* فلش مشکی */
+  color: #202b3d; /* فلش مشکی */
   cursor: pointer;
   z-index: 10;
   display: flex;
@@ -229,7 +228,7 @@ export default {
   padding: 0 20px;
   gap: 28px;
   box-sizing: border-box;
-  color: white;
+  color: #ffffff;
   background-color: transparent;
   font-size: 16px;
   border-radius: 8px;
@@ -265,16 +264,16 @@ export default {
 
 .menu-item .material-icons {
   font-size: 20px;
-  color: white;
+  color: #ffffff;
 }
 
 .menu-item:hover {
-  background-color: rgba(255, 255, 255, 0.15);
-  color: white;
+  background-color: #2b3953;
+  color: #ffffff;
 }
 
 .menu-item:hover .material-icons {
-  color: white;
+  color: #ffffff;
 }
 
 .item-label {
@@ -288,12 +287,12 @@ export default {
 }
 
 .menu-item.router-link-exact-active {
-  background-color: white;
-  color: #0e3168;
+  background-color: #337efe;
+  color: #ffffff;
   font-weight: bold;
 }
 .menu-item.router-link-exact-active .material-icons {
-  color: #2d53da;
+  color: #ffffff;
 }
 
 .item-label.hidden {
@@ -309,8 +308,8 @@ export default {
   left: calc(100% + 12px);
   top: 50%;
   transform: translateY(-50%);
-  background-color: #fff;
-  color: #0e3168;
+  background-color: #2b3953;
+  color: #ffffff;
   padding: 6px 10px;
   font-size: 13px;
   white-space: nowrap;

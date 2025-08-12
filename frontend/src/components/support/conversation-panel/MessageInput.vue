@@ -156,7 +156,7 @@ export default {
 
 .send-btn {
   background-color: #007bff;
-  color: white;
+  color: #ffffff;
   border: none;
   border-radius: 50%;
   padding: 10px;
