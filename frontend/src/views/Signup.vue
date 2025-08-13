@@ -96,11 +96,6 @@
             />
             Sign up with Google
           </button>
-
-          <!-- پیام موفقیت -->
-          <!--  <p v-if="s/uccessMessage" class="success-message">
-            Registration was successful
-          </p> -->
         </form>
       </div>
     </div>
@@ -117,33 +112,31 @@
       </div>
     </div>
 
-    <!-- ✅ پاپ‌آپ تأیید ایمیل -->
-    <div v-if="showVerifyPopup" class="verify-popup-overlay">
-      <div class="verify-popup">
-        <h3>Verify your email</h3>
-        <p>
-          We've sent a verification link to your email. Please check your inbox
-          and enter the code below:
-        </p>
-
-        <!-- ✅ ورودی کد تأیید -->
-        <input
-          v-model="verificationCode"
-          type="text"
-          placeholder="Enter verification code"
-          class="verify-input"
-        />
-
-        <!-- ✅ دکمه تأیید -->
-        <button @click="submitVerificationCode">Submit</button>
-      </div>
-    </div>
+    <!-- مودال قابل استفاده مجدد -->
+    <VerifyEmailModal
+      v-model="showVerifyPopup"
+      :email="email"
+      :loading="verifying"
+      title="Verify your email"
+      message="Please check your inbox and enter the 6‑digit code."
+      :code-length="6"
+      :numeric-only="true"
+      placeholder="6-digit code"
+      submit-text="Submit"
+      :resend-cooldown="120"
+      @submit="onVerifySubmit"
+      @resend="onVerifyResend"
+      @close="onVerifyClose"
+    />
   </div>
 </template>
 
 <script>
+import VerifyEmailModal from "@/components/layout/modals/VerifyEmailModal.vue";
+
 export default {
   name: "SignupPage",
+  components: { VerifyEmailModal },
   data() {
     return {
       email: "",
@@ -155,10 +148,9 @@ export default {
       passwordError: false,
       confirmError: false,
       duplicateError: false,
-      successMessage: false,
-      showVerifyPopup: false,
-      verificationCode: "", // 🔸 کد تأیید ایمیل
       submitted: false,
+      showVerifyPopup: false,
+      verifying: false,
     };
   },
   computed: {
@@ -223,50 +215,60 @@ export default {
         const data = await res.json();
 
         if (res.ok) {
-          console.log("✅ Signup successful. Showing popup...");
-          this.successMessage = true;
+          console.log("Signup success. Open verify modal");
           this.showVerifyPopup = true;
         } else {
           console.error("Signup failed:", data.error || "Unknown error");
         }
-      } catch (err) {
-        console.error("Network error:", err);
+      } catch (e) {
+        console.error("Network error:", e);
       }
     },
 
-    async submitVerificationCode() {
-      if (!this.verificationCode.trim()) {
-        alert("Please enter the verification code.");
-        return;
-      }
-
+    async onVerifySubmit(code) {
+      // وقتی کاربر داخل مودال Submit زد
+      if (!code) return;
+      this.verifying = true;
       try {
+        console.log("[Signup] verifying code for", this.email, "code:", code); // debug
         const res = await fetch("http://localhost:3000/api/verify-code", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            email: this.email,
-            code: this.verificationCode,
-          }),
+          body: JSON.stringify({ email: this.email, code }),
         });
-
         const data = await res.json();
-
         if (res.ok) {
-          alert("✅ Email verified successfully.");
+          alert("Email verified successfully.");
           this.showVerifyPopup = false;
-          this.$router.push("/login");
+          this.$router.push("/Dashboard");
         } else {
           alert(data.error || "Verification failed.");
         }
       } catch (err) {
         console.error("Verification request failed:", err);
         alert("Server error during verification.");
+      } finally {
+        this.verifying = false;
       }
     },
 
-    closePopup() {
-      this.showVerifyPopup = false;
+    async onVerifyResend() {
+      // ارسال مجدد کد
+      try {
+        console.log("[Signup] resend code to", this.email); // debug
+        await fetch("http://localhost:3000/api/resend-code", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: this.email }),
+        });
+        // پیام دلخواه…
+      } catch (e) {
+        console.error("Resend failed:", e);
+      }
+    },
+
+    onVerifyClose() {
+      console.log("[Signup] verify modal closed"); // debug
     },
   },
 };
@@ -523,72 +525,5 @@ button[type="submit"]:hover {
   color: red;
   font-size: 13px;
   margin-top: 5px;
-}
-
-.success-message {
-  color: #337efe;
-  text-align: center;
-  margin-top: 15px;
-  font-weight: bold;
-}
-
-.verify-popup-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.4);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.verify-popup {
-  background: #ffffff;
-  padding: 30px;
-  border-radius: 12px;
-  width: 90%;
-  max-width: 400px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.verify-popup h3 {
-  margin-bottom: 10px;
-  font-size: 20px;
-  color: #337efe;
-}
-
-.verify-popup p {
-  font-size: 14px;
-  color: #333;
-  margin-bottom: 20px;
-}
-
-.verify-popup button {
-  background-color: #337efe;
-  color: #ffffff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-}
-
-.verify-popup button:hover {
-  background-color: #2544b3;
-}
-
-.verify-input {
-  width: 100%;
-  height: 40px;
-  margin: 15px 0;
-  padding: 0 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  box-sizing: border-box;
 }
 </style>
